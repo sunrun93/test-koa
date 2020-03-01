@@ -86,25 +86,70 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/api/a.js":
+/*!**********************!*\
+  !*** ./src/api/a.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function (ctx) {\n  ctx.body = {\n    'message': 'hello from A'\n  };\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXBpL2EuanM/YzE5OCJdLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwiY3R4IiwiYm9keSJdLCJtYXBwaW5ncyI6IkFBQUFBLE1BQU0sQ0FBQ0MsT0FBUCxHQUFpQixVQUFTQyxHQUFULEVBQWE7QUFDNUJBLEtBQUcsQ0FBQ0MsSUFBSixHQUFXO0FBQ1QsZUFBVTtBQURELEdBQVg7QUFHRCxDQUpEIiwiZmlsZSI6Ii4vc3JjL2FwaS9hLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSBmdW5jdGlvbihjdHgpe1xuICBjdHguYm9keSA9IHtcbiAgICAnbWVzc2FnZSc6J2hlbGxvIGZyb20gQSdcbiAgfVxufSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/api/a.js\n");
+
+/***/ }),
+
+/***/ "./src/api/b.js":
+/*!**********************!*\
+  !*** ./src/api/b.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function (ctx) {\n  ctx.body = {\n    'message': 'hello from B'\n  };\n};//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXBpL2IuanM/ZGVmZCJdLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwiY3R4IiwiYm9keSJdLCJtYXBwaW5ncyI6IkFBQUFBLE1BQU0sQ0FBQ0MsT0FBUCxHQUFpQixVQUFTQyxHQUFULEVBQWE7QUFDNUJBLEtBQUcsQ0FBQ0MsSUFBSixHQUFXO0FBQ1QsZUFBVTtBQURELEdBQVg7QUFHRCxDQUpEIiwiZmlsZSI6Ii4vc3JjL2FwaS9iLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSBmdW5jdGlvbihjdHgpe1xuICBjdHguYm9keSA9IHtcbiAgICAnbWVzc2FnZSc6J2hlbGxvIGZyb20gQidcbiAgfVxufSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/api/b.js\n");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const Koa = __webpack_require__(/*! koa */ \"koa\");\n\nconst router = __webpack_require__(/*! koa-router */ \"koa-router\")();\n\nconst koaBody = __webpack_require__(/*! koa-body */ \"koa-body\");\n\nconst cors = __webpack_require__(/*! @koa/cors */ \"@koa/cors\");\n\nconst json = __webpack_require__(/*! koa-json */ \"koa-json\");\n\nconst app = new Koa();\nrouter.prefix('/api');\nrouter.post('/post', async ctx => {\n  const {\n    body\n  } = ctx.request;\n  console.log(body);\n  console.log(ctx.request);\n  ctx.body = { ...body\n  };\n});\nrouter.get('/api', async ctx => {\n  const params = ctx.request.query;\n  console.log(params);\n  ctx.body = {\n    name: params.name,\n    age: params.age\n  };\n});\napp.use(koaBody());\napp.use(cors());\napp.use(json({\n  pretty: true,\n  param: 'pretty'\n}));\napp.use(router.routes());\napp.listen(3000);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJuYW1lcyI6WyJLb2EiLCJyZXF1aXJlIiwicm91dGVyIiwia29hQm9keSIsImNvcnMiLCJqc29uIiwiYXBwIiwicHJlZml4IiwicG9zdCIsImN0eCIsImJvZHkiLCJyZXF1ZXN0IiwiY29uc29sZSIsImxvZyIsImdldCIsInBhcmFtcyIsInF1ZXJ5IiwibmFtZSIsImFnZSIsInVzZSIsInByZXR0eSIsInBhcmFtIiwicm91dGVzIiwibGlzdGVuIl0sIm1hcHBpbmdzIjoiQUFBQSxNQUFNQSxHQUFHLEdBQUdDLG1CQUFPLENBQUMsZ0JBQUQsQ0FBbkI7O0FBQ0EsTUFBTUMsTUFBTSxHQUFHRCxtQkFBTyxDQUFDLDhCQUFELENBQVAsRUFBZjs7QUFDQSxNQUFNRSxPQUFPLEdBQUdGLG1CQUFPLENBQUMsMEJBQUQsQ0FBdkI7O0FBQ0EsTUFBTUcsSUFBSSxHQUFHSCxtQkFBTyxDQUFDLDRCQUFELENBQXBCOztBQUNBLE1BQU1JLElBQUksR0FBR0osbUJBQU8sQ0FBQywwQkFBRCxDQUFwQjs7QUFDQSxNQUFNSyxHQUFHLEdBQUcsSUFBSU4sR0FBSixFQUFaO0FBRUFFLE1BQU0sQ0FBQ0ssTUFBUCxDQUFjLE1BQWQ7QUFFQUwsTUFBTSxDQUFDTSxJQUFQLENBQVksT0FBWixFQUFxQixNQUFNQyxHQUFOLElBQVc7QUFDOUIsUUFBTTtBQUFDQztBQUFELE1BQVNELEdBQUcsQ0FBQ0UsT0FBbkI7QUFDQUMsU0FBTyxDQUFDQyxHQUFSLENBQVlILElBQVo7QUFDQUUsU0FBTyxDQUFDQyxHQUFSLENBQVlKLEdBQUcsQ0FBQ0UsT0FBaEI7QUFDQUYsS0FBRyxDQUFDQyxJQUFKLEdBQVUsRUFDUixHQUFHQTtBQURLLEdBQVY7QUFHRCxDQVBEO0FBU0FSLE1BQU0sQ0FBQ1ksR0FBUCxDQUFXLE1BQVgsRUFBbUIsTUFBTUwsR0FBTixJQUFXO0FBQzVCLFFBQU1NLE1BQU0sR0FBR04sR0FBRyxDQUFDRSxPQUFKLENBQVlLLEtBQTNCO0FBQ0FKLFNBQU8sQ0FBQ0MsR0FBUixDQUFZRSxNQUFaO0FBQ0FOLEtBQUcsQ0FBQ0MsSUFBSixHQUFXO0FBQ1RPLFFBQUksRUFBRUYsTUFBTSxDQUFDRSxJQURKO0FBRVRDLE9BQUcsRUFBRUgsTUFBTSxDQUFDRztBQUZILEdBQVg7QUFJRCxDQVBEO0FBU0FaLEdBQUcsQ0FBQ2EsR0FBSixDQUFRaEIsT0FBTyxFQUFmO0FBQ0FHLEdBQUcsQ0FBQ2EsR0FBSixDQUFRZixJQUFJLEVBQVo7QUFDQUUsR0FBRyxDQUFDYSxHQUFKLENBQVFkLElBQUksQ0FBQztBQUFFZSxRQUFNLEVBQUUsSUFBVjtBQUFnQkMsT0FBSyxFQUFFO0FBQXZCLENBQUQsQ0FBWjtBQUVBZixHQUFHLENBQUNhLEdBQUosQ0FBUWpCLE1BQU0sQ0FBQ29CLE1BQVAsRUFBUjtBQUVBaEIsR0FBRyxDQUFDaUIsTUFBSixDQUFXLElBQVgiLCJmaWxlIjoiLi9zcmMvaW5kZXguanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBLb2EgPSByZXF1aXJlKCdrb2EnKTtcbmNvbnN0IHJvdXRlciA9IHJlcXVpcmUoJ2tvYS1yb3V0ZXInKSgpO1xuY29uc3Qga29hQm9keSA9IHJlcXVpcmUoJ2tvYS1ib2R5Jyk7XG5jb25zdCBjb3JzID0gcmVxdWlyZSgnQGtvYS9jb3JzJyk7XG5jb25zdCBqc29uID0gcmVxdWlyZSgna29hLWpzb24nKTtcbmNvbnN0IGFwcCA9IG5ldyBLb2EoKTtcblxucm91dGVyLnByZWZpeCgnL2FwaScpXG5cbnJvdXRlci5wb3N0KCcvcG9zdCcsIGFzeW5jIGN0eD0+e1xuICBjb25zdCB7Ym9keX0gPSBjdHgucmVxdWVzdDtcbiAgY29uc29sZS5sb2coYm9keSk7XG4gIGNvbnNvbGUubG9nKGN0eC5yZXF1ZXN0KTtcbiAgY3R4LmJvZHk9IHtcbiAgICAuLi5ib2R5XG4gIH1cbn0pXG5cbnJvdXRlci5nZXQoJy9hcGknLCBhc3luYyBjdHg9PntcbiAgY29uc3QgcGFyYW1zID0gY3R4LnJlcXVlc3QucXVlcnk7XG4gIGNvbnNvbGUubG9nKHBhcmFtcyk7XG4gIGN0eC5ib2R5ID0ge1xuICAgIG5hbWU6IHBhcmFtcy5uYW1lLFxuICAgIGFnZTogcGFyYW1zLmFnZVxuICB9XG59KVxuXG5hcHAudXNlKGtvYUJvZHkoKSk7XG5hcHAudXNlKGNvcnMoKSk7XG5hcHAudXNlKGpzb24oeyBwcmV0dHk6IHRydWUsIHBhcmFtOiAncHJldHR5J30pKTtcblxuYXBwLnVzZShyb3V0ZXIucm91dGVzKCkpO1xuXG5hcHAubGlzdGVuKDMwMDApXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var koa__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! koa */ \"koa\");\n/* harmony import */ var koa__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(koa__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _routes_route__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes/route */ \"./src/routes/route.js\");\n/* harmony import */ var _routes_route__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_routes_route__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var koa_helmet__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! koa-helmet */ \"koa-helmet\");\n/* harmony import */ var koa_helmet__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(koa_helmet__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var koa_static__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! koa-static */ \"koa-static\");\n/* harmony import */ var koa_static__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(koa_static__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! path */ \"path\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_4__);\n\n\n\n\n\nconst app = new koa__WEBPACK_IMPORTED_MODULE_0___default.a();\napp.use(koa_helmet__WEBPACK_IMPORTED_MODULE_2___default()());\napp.use(koa_static__WEBPACK_IMPORTED_MODULE_3___default()(path__WEBPACK_IMPORTED_MODULE_4___default.a.join(__dirname, '../public')));\napp.use(_routes_route__WEBPACK_IMPORTED_MODULE_1___default()());\napp.listen(3000);\n/* WEBPACK VAR INJECTION */}.call(this, \"src\"))//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvaW5kZXguanM/YjYzNSJdLCJuYW1lcyI6WyJhcHAiLCJLb2EiLCJ1c2UiLCJoZWxtZXQiLCJzdGF0aWNzIiwicGF0aCIsImpvaW4iLCJfX2Rpcm5hbWUiLCJyb3V0ZXIiLCJsaXN0ZW4iXSwibWFwcGluZ3MiOiJBQUNBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBRUEsTUFBTUEsR0FBRyxHQUFHLElBQUlDLDBDQUFKLEVBQVo7QUFFQUQsR0FBRyxDQUFDRSxHQUFKLENBQVFDLGlEQUFNLEVBQWQ7QUFDQUgsR0FBRyxDQUFDRSxHQUFKLENBQVFFLGlEQUFPLENBQUNDLDJDQUFJLENBQUNDLElBQUwsQ0FBVUMsU0FBVixFQUFvQixXQUFwQixDQUFELENBQWY7QUFDQVAsR0FBRyxDQUFDRSxHQUFKLENBQVFNLG9EQUFNLEVBQWQ7QUFDQVIsR0FBRyxDQUFDUyxNQUFKLENBQVcsSUFBWCxFIiwiZmlsZSI6Ii4vc3JjL2luZGV4LmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgS29hIGZyb20gJ2tvYSc7XG5pbXBvcnQgcm91dGVyIGZyb20gJy4vcm91dGVzL3JvdXRlJztcbmltcG9ydCBoZWxtZXQgZnJvbSAna29hLWhlbG1ldCc7XG5pbXBvcnQgc3RhdGljcyBmcm9tICdrb2Etc3RhdGljJztcbmltcG9ydCBwYXRoIGZyb20gJ3BhdGgnO1xuXG5jb25zdCBhcHAgPSBuZXcgS29hKCk7XG5cbmFwcC51c2UoaGVsbWV0KCkpO1xuYXBwLnVzZShzdGF0aWNzKHBhdGguam9pbihfX2Rpcm5hbWUsJy4uL3B1YmxpYycpKSk7XG5hcHAudXNlKHJvdXRlcigpKTtcbmFwcC5saXN0ZW4oMzAwMClcblxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/index.js\n");
 
 /***/ }),
 
-/***/ "@koa/cors":
-/*!****************************!*\
-  !*** external "@koa/cors" ***!
-  \****************************/
+/***/ "./src/routes/aRoute.js":
+/*!******************************!*\
+  !*** ./src/routes/aRoute.js ***!
+  \******************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = require(\"@koa/cors\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJAa29hL2NvcnNcIj9hNjk1Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6IkBrb2EvY29ycy5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gcmVxdWlyZShcIkBrb2EvY29yc1wiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///@koa/cors\n");
+eval("const Router = __webpack_require__(/*! koa-router */ \"koa-router\");\n\nconst a = __webpack_require__(/*! ../api/a */ \"./src/api/a.js\");\n\nconst router = new Router();\nrouter.get('/a', a);\nmodule.exports = router;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm91dGVzL2FSb3V0ZS5qcz8zZmQ2Il0sIm5hbWVzIjpbIlJvdXRlciIsInJlcXVpcmUiLCJhIiwicm91dGVyIiwiZ2V0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTUEsTUFBTSxHQUFHQyxtQkFBTyxDQUFDLDhCQUFELENBQXRCOztBQUNBLE1BQU1DLENBQUMsR0FBR0QsbUJBQU8sQ0FBQyxnQ0FBRCxDQUFqQjs7QUFFQSxNQUFNRSxNQUFNLEdBQUcsSUFBSUgsTUFBSixFQUFmO0FBRUFHLE1BQU0sQ0FBQ0MsR0FBUCxDQUFXLElBQVgsRUFBaUJGLENBQWpCO0FBRUFHLE1BQU0sQ0FBQ0MsT0FBUCxHQUFpQkgsTUFBakIiLCJmaWxlIjoiLi9zcmMvcm91dGVzL2FSb3V0ZS5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJvdXRlciA9IHJlcXVpcmUoJ2tvYS1yb3V0ZXInKTtcbmNvbnN0IGEgPSByZXF1aXJlKCcuLi9hcGkvYScpO1xuXG5jb25zdCByb3V0ZXIgPSBuZXcgUm91dGVyKCk7XG5cbnJvdXRlci5nZXQoJy9hJywgYSk7XG5cbm1vZHVsZS5leHBvcnRzID0gcm91dGVyOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/routes/aRoute.js\n");
+
+/***/ }),
+
+/***/ "./src/routes/bRoute.js":
+/*!******************************!*\
+  !*** ./src/routes/bRoute.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const Router = __webpack_require__(/*! koa-router */ \"koa-router\");\n\nconst b = __webpack_require__(/*! ../api/b */ \"./src/api/b.js\");\n\nconst router = new Router();\nrouter.get('/b', b);\nmodule.exports = router;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm91dGVzL2JSb3V0ZS5qcz81OWVkIl0sIm5hbWVzIjpbIlJvdXRlciIsInJlcXVpcmUiLCJiIiwicm91dGVyIiwiZ2V0IiwibW9kdWxlIiwiZXhwb3J0cyJdLCJtYXBwaW5ncyI6IkFBQUEsTUFBTUEsTUFBTSxHQUFHQyxtQkFBTyxDQUFDLDhCQUFELENBQXRCOztBQUNBLE1BQU1DLENBQUMsR0FBR0QsbUJBQU8sQ0FBQyxnQ0FBRCxDQUFqQjs7QUFFQSxNQUFNRSxNQUFNLEdBQUcsSUFBSUgsTUFBSixFQUFmO0FBRUFHLE1BQU0sQ0FBQ0MsR0FBUCxDQUFXLElBQVgsRUFBaUJGLENBQWpCO0FBRUFHLE1BQU0sQ0FBQ0MsT0FBUCxHQUFpQkgsTUFBakIiLCJmaWxlIjoiLi9zcmMvcm91dGVzL2JSb3V0ZS5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFJvdXRlciA9IHJlcXVpcmUoJ2tvYS1yb3V0ZXInKTtcbmNvbnN0IGIgPSByZXF1aXJlKCcuLi9hcGkvYicpO1xuXG5jb25zdCByb3V0ZXIgPSBuZXcgUm91dGVyKCk7XG5cbnJvdXRlci5nZXQoJy9iJywgYik7XG5cbm1vZHVsZS5leHBvcnRzID0gcm91dGVyOyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./src/routes/bRoute.js\n");
+
+/***/ }),
+
+/***/ "./src/routes/route.js":
+/*!*****************************!*\
+  !*** ./src/routes/route.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const combineRoutes = __webpack_require__(/*! koa-combine-routers */ \"koa-combine-routers\");\n\nconst aRoutes = __webpack_require__(/*! ./aRoute */ \"./src/routes/aRoute.js\");\n\nconst bRoutes = __webpack_require__(/*! ./bRoute */ \"./src/routes/bRoute.js\");\n\nmodule.exports = combineRoutes(aRoutes, bRoutes);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvcm91dGVzL3JvdXRlLmpzPzM2YWEiXSwibmFtZXMiOlsiY29tYmluZVJvdXRlcyIsInJlcXVpcmUiLCJhUm91dGVzIiwiYlJvdXRlcyIsIm1vZHVsZSIsImV4cG9ydHMiXSwibWFwcGluZ3MiOiJBQUFBLE1BQU1BLGFBQWEsR0FBR0MsbUJBQU8sQ0FBQyxnREFBRCxDQUE3Qjs7QUFFQSxNQUFNQyxPQUFPLEdBQUdELG1CQUFPLENBQUMsd0NBQUQsQ0FBdkI7O0FBQ0EsTUFBTUUsT0FBTyxHQUFHRixtQkFBTyxDQUFDLHdDQUFELENBQXZCOztBQUVBRyxNQUFNLENBQUNDLE9BQVAsR0FBaUJMLGFBQWEsQ0FDNUJFLE9BRDRCLEVBRTVCQyxPQUY0QixDQUE5QiIsImZpbGUiOiIuL3NyYy9yb3V0ZXMvcm91dGUuanMuanMiLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBjb21iaW5lUm91dGVzID0gcmVxdWlyZSgna29hLWNvbWJpbmUtcm91dGVycycpO1xuXG5jb25zdCBhUm91dGVzID0gcmVxdWlyZSgnLi9hUm91dGUnKTtcbmNvbnN0IGJSb3V0ZXMgPSByZXF1aXJlKCcuL2JSb3V0ZScpO1xuXG5tb2R1bGUuZXhwb3J0cyA9IGNvbWJpbmVSb3V0ZXMoXG4gIGFSb3V0ZXMsXG4gIGJSb3V0ZXNcbik7Il0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/routes/route.js\n");
 
 /***/ }),
 
@@ -119,25 +164,25 @@ eval("module.exports = require(\"koa\");//# sourceURL=[module]\n//# sourceMappin
 
 /***/ }),
 
-/***/ "koa-body":
-/*!***************************!*\
-  !*** external "koa-body" ***!
-  \***************************/
+/***/ "koa-combine-routers":
+/*!**************************************!*\
+  !*** external "koa-combine-routers" ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"koa-body\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2EtYm9keVwiPzNmNjUiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoia29hLWJvZHkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJrb2EtYm9keVwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-body\n");
+eval("module.exports = require(\"koa-combine-routers\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2EtY29tYmluZS1yb3V0ZXJzXCI/MmM3NSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJrb2EtY29tYmluZS1yb3V0ZXJzLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwia29hLWNvbWJpbmUtcm91dGVyc1wiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-combine-routers\n");
 
 /***/ }),
 
-/***/ "koa-json":
-/*!***************************!*\
-  !*** external "koa-json" ***!
-  \***************************/
+/***/ "koa-helmet":
+/*!*****************************!*\
+  !*** external "koa-helmet" ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = require(\"koa-json\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2EtanNvblwiPzY1MjgiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEiLCJmaWxlIjoia29hLWpzb24uanMiLCJzb3VyY2VzQ29udGVudCI6WyJtb2R1bGUuZXhwb3J0cyA9IHJlcXVpcmUoXCJrb2EtanNvblwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-json\n");
+eval("module.exports = require(\"koa-helmet\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2EtaGVsbWV0XCI/NDJkMSJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJrb2EtaGVsbWV0LmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwia29hLWhlbG1ldFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-helmet\n");
 
 /***/ }),
 
@@ -149,6 +194,28 @@ eval("module.exports = require(\"koa-json\");//# sourceURL=[module]\n//# sourceM
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"koa-router\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2Etcm91dGVyXCI/MDM1ZCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJrb2Etcm91dGVyLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwia29hLXJvdXRlclwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-router\n");
+
+/***/ }),
+
+/***/ "koa-static":
+/*!*****************************!*\
+  !*** external "koa-static" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"koa-static\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJrb2Etc3RhdGljXCI/OWE0YyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJrb2Etc3RhdGljLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwia29hLXN0YXRpY1wiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///koa-static\n");
+
+/***/ }),
+
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"path\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vZXh0ZXJuYWwgXCJwYXRoXCI/NzRiYiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSIsImZpbGUiOiJwYXRoLmpzIiwic291cmNlc0NvbnRlbnQiOlsibW9kdWxlLmV4cG9ydHMgPSByZXF1aXJlKFwicGF0aFwiKTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///path\n");
 
 /***/ })
 

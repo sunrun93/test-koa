@@ -1,14 +1,14 @@
-const Koa = require('koa');
-const app = new Koa();
-const router = require('./routes/route');
-const helmet = require('koa-helmet');
-const statics = require('koa-static');
-const path = require('path');
 
+import Koa from 'koa';
+import router from './routes/route';
+import helmet from 'koa-helmet';
+import statics from 'koa-static';
+import path from 'path';
+
+const app = new Koa();
 
 app.use(helmet());
 app.use(statics(path.join(__dirname,'../public')));
 app.use(router());
 app.listen(3000)
 
-// npx nodemon --exec babel-node src/index.js
